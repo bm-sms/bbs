@@ -1,6 +1,7 @@
-class CategoryCell < Cell::ViewModel
-  def show
-    render
+module Bbs
+  class CategoryCell < ApplicationCell
+    def show
+      render
+    end
   end
-
 end
