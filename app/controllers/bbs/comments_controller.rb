@@ -3,7 +3,7 @@ module Bbs
     before_action :set_topic
 
     def index
-      @comments = @topic.comments
+      @comments = @topic.comments.order(:created_at).page(params[:page]).per(5)
     end
 
     private
