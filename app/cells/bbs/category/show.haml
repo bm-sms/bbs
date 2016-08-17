@@ -1,4 +1,3 @@
-%h1
-  Category#show
-%p
-  Find me in app/cells/bbs/category/show.haml
+%ol.bbs-category
+  - @categories.each do |category|
+    %li.bbs-category__name= link_to category.name, bbs.category_topics_path(category)

@@ -1,0 +1,7 @@
+%h1 comments
+
+%ol
+  - @comments.each do |comment|
+    %li
+      = comment.title
+      = comment.body
