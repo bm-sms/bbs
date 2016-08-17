@@ -1,5 +1,5 @@
 require "bbs/engine"
 
 module Bbs
-  # Your code goes here...
+  mattr_accessor :author_class
 end
