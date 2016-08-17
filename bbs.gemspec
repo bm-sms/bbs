@@ -5,8 +5,8 @@ require 'bbs/version'
 Gem::Specification.new do |s|
   s.name        = 'bbs'
   s.version     = Bbs::VERSION
-  s.authors     = ['nobody']
-  s.email       = ['nobody@bm-sms.co.jp']
+  s.authors     = ['']
+  s.email       = ['jp.bm-sms.developers@bm-sms.jp']
   s.homepage    = ''
   s.summary     = 'Summary of Bbs.'
   s.description = 'Description of Bbs.'
