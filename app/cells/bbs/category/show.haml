@@ -1,3 +1,5 @@
+%h1 Categories
+
 %ol.bbs-category
   - @categories.each do |category|
     %li.bbs-category__name= link_to category.name, bbs.category_topics_path(category)
