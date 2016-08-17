@@ -1,3 +1,5 @@
+require 'cells-rails'
+require 'cells-hamlit'
 require 'kaminari'
 
 module Bbs
