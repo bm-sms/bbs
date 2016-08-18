@@ -28,6 +28,7 @@ module Bbs
 
     def topic_params
       params.require(:topic).permit(Bbs::Topic.permitted_attributes)
+        .merge(author: current_user)
     end
   end
 end
