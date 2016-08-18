@@ -1,5 +1,5 @@
 module Bbs
-  class Topic < ApplicationRecord
+  class Topic < ::Bbs::ApplicationRecord
     has_many :comments
 
     belongs_to :category

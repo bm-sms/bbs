@@ -1,5 +1,5 @@
 module Bbs
-  class Category < ApplicationRecord
+  class Category < ::Bbs::ApplicationRecord
     has_many :topics
   end
 end

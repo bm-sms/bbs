@@ -1,5 +1,7 @@
 %h1 Topics
 
+= link_to 'create new topic', bbs.new_category_topic_path(@category)
+
 %ol
   - @topics.each do |topic|
     %li= link_to topic.title, bbs.topic_comments_path(topic)
