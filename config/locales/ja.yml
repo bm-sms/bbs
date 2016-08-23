@@ -1,13 +1,41 @@
 ja:
   activerecord:
+    errors:
+      models:
+        bbs/topic:
+          attributes:
+            author:
+              required: 投稿者がありません。
+            title:
+              blank: タイトルを入力してください。
+            body:
+              blank: トピック本文を入力してください。
+        bbs/comment:
+          attributes:
+            author:
+              required: 投稿者がありません。
+            title:
+              blank: タイトルを入力してください。
+            body:
+              blank: コメント本文を入力してください。
     attributes:
+      bbs/topic:
+        title: タイトル
+        body: 本文
       bbs/comment:
         title: タイトル
         body: 本文
   helpers:
     submit:
+      topic:
+        create: トピックを作成する
       comment:
         create: 投稿する
   bbs:
+    topics:
+      new:
+        create: 新しいトピックを作成します
     category:
       title: カテゴリ
+    latest_topics:
+      title: 最新トピック

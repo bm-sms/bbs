@@ -1,13 +1,41 @@
 en:
   activerecord:
+    errors:
+      models:
+        bbs/topic:
+          attributes:
+            author:
+              required: Login required.
+            title:
+              blank: Enter the topic title.
+            body:
+              blank: Enter the topic.
+        bbs/comment:
+          attributes:
+            author:
+              required: Login required.
+            title:
+              blank: Enter the comment title.
+            body:
+              blank: Enter the comment.
     attributes:
+      bbs/topic:
+        title: Title
+        body: Topic body
       bbs/comment:
         title: Title
-        body: Comment
+        body: Comment body
   helpers:
     submit:
+      topic:
+        create: Create new topic
       comment:
-        create: Post Comment
+        create: Post new comment
   bbs:
+    topics:
+      new:
+        create: Create new topic
     category:
       title: Categories
+    latest_topics:
+      title: Latest topics

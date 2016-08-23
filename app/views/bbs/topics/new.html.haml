@@ -1,6 +1,23 @@
-%h1 create new topic
+%h1
+  カテゴリ
+  = @category.name
+  に
+  = t('.create')
 
-= form_for @topic, url: bbs.category_topics_path(@category) do |f|
-  = f.text_field :title
-  = f.text_area :body
-  = f.submit
+.bbs-form.bbs-form--vertical
+  = form_for [bbs, @category, @topic] do |f|
+    = f.label :title
+    = f.text_field :title, class: "bbs-form-field #{@topic.errors[:title].any? ? 'bbs-form-field-error' : ''}"
+    - if @topic.errors[:title].any?
+      %ul.bbs-form-error-list
+        - @topic.errors[:title].each do |error|
+          %li.bbs-form-error-item= error
+
+    = f.label :body
+    = f.text_area :body, class: "bbs-form-field #{@topic.errors[:body].any? ? 'bbs-form-field-error' : ''}"
+    - if @topic.errors[:body].any?
+      %ul.bbs-form-error-list
+        - @topic.errors[:body].each do |error|
+          %li.bbs-form-error-item= error
+
+    = f.submit

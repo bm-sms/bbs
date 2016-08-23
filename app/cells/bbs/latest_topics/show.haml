@@ -1,5 +1,6 @@
-%h1 Latest Topics
+%article.latest-topics
+  %h1= t('.title')
 
-%ol
-  - @topics.each do |topic|
-    %li= link_to topic.title, bbs.topic_comments_path(topic)
+  %ol.latest-topic-list
+    - @topics.each do |topic|
+      %li.latest-topic-item= link_to topic.title, bbs.topic_comments_path(topic)
