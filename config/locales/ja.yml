@@ -1,4 +1,13 @@
 ja:
+  activerecord:
+    attributes:
+      bbs/comment:
+        title: タイトル
+        body: 本文
+  helpers:
+    submit:
+      comment:
+        create: 投稿する
   bbs:
     category:
       title: カテゴリ

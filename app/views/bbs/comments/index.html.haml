@@ -1,19 +1,25 @@
-%h1 comments
+%article.bbs-topic
+  %h1.bbs-topic__title= @topic.title
 
-%article
-  %header= @topic.title
-  = @topic.body
+  .bbs-topic__body= @topic.body
 
-%ol
-  - @comments.each do |comment|
-    %li
-      %article
-        %header= comment.title
-        = comment.body
+  %ol.bbs-comment-list
+    - @comments.each do |comment|
+      %li.bbs-comment-item
+        %article.bbs-comment
+          %h1.bbs-comment__title= comment.title
 
-= paginate @comments
+          .bbs-comment__body= comment.body
 
-= form_for [bbs, @topic, Bbs::Comment.new] do |f|
-  = f.text_field :title
-  = f.text_area :body
-  = f.submit
+  .bbs-pagination
+    = paginate @comments
+
+  .bbs-form--vertical
+    = form_for [bbs, @topic, Bbs::Comment.new] do |f|
+      = f.label :title
+      = f.text_field :title
+
+      = f.label :body
+      = f.text_area :body
+
+      = f.submit

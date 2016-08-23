@@ -1,4 +1,13 @@
 en:
+  activerecord:
+    attributes:
+      bbs/comment:
+        title: Title
+        body: Comment
+  helpers:
+    submit:
+      comment:
+        create: Post Comment
   bbs:
     category:
       title: Categories
