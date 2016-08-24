@@ -1,6 +1,14 @@
 %article.bbs-topic
   %h1.bbs-topic__title= @topic.title
 
+  %span.bbs-topic__author
+    投稿者
+    = @topic.author_id
+
+  %span.bbs-topic__created_at
+    投稿日
+    = l(@topic.created_at)
+
   .bbs-topic__body= @topic.body
 
   %ol.bbs-comment-list
@@ -8,6 +16,14 @@
       %li.bbs-comment-item
         %article.bbs-comment
           %h1.bbs-comment__title= comment.title
+
+          %span.bbs-comment__author
+            投稿者
+            = @topic.author_id
+
+          %span.bbs-comment__created_at
+            投稿日
+            = l(comment.created_at)
 
           .bbs-comment__body= comment.body
 
