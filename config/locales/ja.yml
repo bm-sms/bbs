@@ -35,6 +35,9 @@ ja:
     topics:
       new:
         create: 新しいトピックを作成します
+    comments:
+      index:
+        posted_at: 投稿日時
     category:
       title: カテゴリ
     latest_topics:

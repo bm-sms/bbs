@@ -1,49 +1,27 @@
-%article.bbs-topic
-  %h1.bbs-topic__title= @topic.title
+%article.bbs-article
+  = cell('bbs/article', @topic)
 
-  %span.bbs-topic__author
-    投稿者
-    = @topic.author_id
-
-  %span.bbs-topic__created_at
-    投稿日
-    = l(@topic.created_at)
-
-  .bbs-topic__body= @topic.body
-
-  %ol.bbs-comment-list
-    - @comments.each do |comment|
-      %li.bbs-comment-item
-        %article.bbs-comment
-          %h1.bbs-comment__title= comment.title
-
-          %span.bbs-comment__author
-            投稿者
-            = @topic.author_id
-
-          %span.bbs-comment__created_at
-            投稿日
-            = l(comment.created_at)
-
-          .bbs-comment__body= comment.body
+  - @comments.each do |comment|
+    %article.bbs-article
+      = cell('bbs/article', comment)
 
   .bbs-pagination
     = paginate @comments
 
-  .bbs-form.bbs-form--vertical
-    = form_for [bbs, @topic, @comment] do |f|
-      = f.label :title
-      = f.text_field :title, class: "bbs-form-field #{@comment.errors[:title].any? ? 'bbs-form-field-error' : ''}"
-      - if @comment.errors[:title].any?
-        %ul.bbs-form-error-list
-          - @comment.errors[:title].each do |error|
-            %li.bbs-form-error-item= error
+.bbs-form.bbs-form--vertical
+  = form_for [bbs, @topic, @comment] do |f|
+    = f.label :title
+    = f.text_field :title, class: "bbs-form-field #{@comment.errors[:title].any? ? 'bbs-form-field-error' : ''}"
+    - if @comment.errors[:title].any?
+      %ul.bbs-list.bbs-form-error-list
+        - @comment.errors[:title].each do |error|
+          %li.bbs-list-item.bbs-form-error-item= error
 
-      = f.label :body
-      = f.text_area :body, class: "bbs-form-field #{@comment.errors[:body].any? ? 'bbs-form-field-error' : ''}"
-      - if @comment.errors[:body].any?
-        %ul.bbs-form-error-list
-          - @comment.errors[:body].each do |error|
-            %li.bbs-form-error-item= error
+    = f.label :body
+    = f.text_area :body, class: "bbs-form-field #{@comment.errors[:body].any? ? 'bbs-form-field-error' : ''}"
+    - if @comment.errors[:body].any?
+      %ul.bbs-list.bbs-form-error-list
+        - @comment.errors[:body].each do |error|
+          %li.bbs-list-item.bbs-form-error-item= error
 
-      = f.submit
+    = f.submit
