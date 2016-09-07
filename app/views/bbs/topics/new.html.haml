@@ -4,20 +4,21 @@
   に
   = t('.create')
 
-.bbs-form.bbs-form--vertical
-  = form_for [bbs, @category, @topic] do |f|
+= form_for [bbs, @category, @topic], html: {class: 'bbs-form bbs-form--vertical'} do |f|
+  .bbs-form-group
     = f.label :title
-    = f.text_field :title, class: "bbs-form-field #{@topic.errors[:title].any? ? 'bbs-form-field-error' : ''}"
+    = f.text_field :title
     - if @topic.errors[:title].any?
       %ul.bbs-form-error-list
         - @topic.errors[:title].each do |error|
           %li.bbs-form-error-item= error
 
+  .bbs-form-group
     = f.label :body
-    = f.text_area :body, class: "bbs-form-field #{@topic.errors[:body].any? ? 'bbs-form-field-error' : ''}"
+    = f.text_area :body
     - if @topic.errors[:body].any?
       %ul.bbs-form-error-list
         - @topic.errors[:body].each do |error|
           %li.bbs-form-error-item= error
 
-    = f.submit
+  = f.submit class: 'bbs-button'
