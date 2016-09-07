@@ -1,0 +1,17 @@
+.bbs-form.bbs-form--vertical
+  = form_for [bbs, topic, comment] do |f|
+    = f.label :title
+    = f.text_field :title, class: "bbs-form-field #{comment.errors[:title].any? ? 'bbs-form-field-error' : ''}"
+    - if @comment.errors[:title].any?
+      %ul.bbs-list.bbs-form-error-list
+        - @comment.errors[:title].each do |error|
+          %li.bbs-list-item.bbs-form-error-item= error
+
+    = f.label :body
+    = f.text_area :body, class: "bbs-form-field #{comment.errors[:body].any? ? 'bbs-form-field-error' : ''}"
+    - if @comment.errors[:body].any?
+      %ul.bbs-list.bbs-form-error-list
+        - @comment.errors[:body].each do |error|
+          %li.bbs-list-item.bbs-form-error-item= error
+
+    = f.submit
