@@ -32,6 +32,8 @@ ja:
       comment:
         create: 投稿する
   bbs:
+    article:
+      noname: 名無しさん
     topics:
       new:
         create: 新しいトピックを作成します

@@ -32,6 +32,8 @@ en:
       comment:
         create: Post new comment
   bbs:
+    article:
+      noname: no name
     topics:
       new:
         create: Create new topic

@@ -1,12 +1,13 @@
 %header.bbs-article__header
   %h1.bbs-article__title= title
 
-  %span.bbs-avatar
-    %img(src="#{avatar_url}")
-  %span.bbs-article__author-name
-    名無しさん
-  %span.bbs-article__posted_at
-    投稿日時
-    = created_at
+.bbs-article-container
+  .bbs-article-creation
+    %span.bbs-avatar
+      %img(src="#{avatar_url}")
 
-%p.bbs-article__body= body
+    %span.bbs-article__author-name= nickname
+
+    %time.bbs-article__posted-at= l(created_at)
+
+  %p.bbs-article__body= body
