@@ -7,5 +7,9 @@ module Bbs
     def show
       render
     end
+
+    def avatar_url
+      current_user.profile&.avatar_url || 'http://ruminate.branhamroys.com/wp-content/uploads/2015/07/unknown.gif'
+    end
   end
 end
