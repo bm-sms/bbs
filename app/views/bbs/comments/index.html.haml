@@ -1,19 +1,11 @@
-%h1 comments
+%article.bbs-article
+  = cell('bbs/article', @topic)
 
-%article
-  %header= @topic.title
-  = @topic.body
-
-%ol
   - @comments.each do |comment|
-    %li
-      %article
-        %header= comment.title
-        = comment.body
+    %article.bbs-article
+      = cell('bbs/article', comment)
 
-= paginate @comments
+  .bbs-pagination
+    = paginate @comments
 
-= form_for [bbs, @topic, Bbs::Comment.new] do |f|
-  = f.text_field :title
-  = f.text_area :body
-  = f.submit
+= render partial: 'bbs/shared/comment_form', locals: {topic: @topic, comment: @comment}

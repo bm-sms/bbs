@@ -1,7 +1,8 @@
-%h1 Topics
+%article.bbs-topic
+  %h1.bbs-topic__title Topics
 
-= link_to 'create new topic', bbs.new_category_topic_path(@category)
+  = link_to 'create new topic', bbs.new_category_topic_path(@category)
 
-%ol
-  - @topics.each do |topic|
-    %li= link_to topic.title, bbs.topic_comments_path(topic)
+  %ol.bbs-topic-list
+    - @topics.each do |topic|
+      %li.bbs-topic-item= link_to topic.title, bbs.topic_comments_path(topic)

@@ -1,5 +1,6 @@
-%h1 Categories
+%article.bbs-categories
+  %h1.bbs-categories__title= t('.title')
 
-%ol.bbs-category
-  - @categories.each do |category|
-    %li.bbs-category__name= link_to category.name, bbs.category_topics_path(category)
+  %ol.bbs-category-list
+    - @categories.each do |category|
+      %li.bbs-category-item= link_to category.name, bbs.category_topics_path(category)
