@@ -36,6 +36,7 @@ ja:
       noname: 名無しさん
     topics:
       index:
+        title: '%{category}のトピック'
         new_topic: 新しいトピックを立てる
         comment_count: (コメント %{count} 件)
       new:
