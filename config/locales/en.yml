@@ -35,6 +35,9 @@ en:
     article:
       noname: no name
     topics:
+      index:
+        new_topic: create a new topic
+        comment_count: (%{count} comments)
       new:
         create: Create new topic
     category:

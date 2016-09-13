@@ -35,6 +35,9 @@ ja:
     article:
       noname: 名無しさん
     topics:
+      index:
+        new_topic: 新しいトピックを立てる
+        comment_count: (コメント %{count} 件)
       new:
         create: 新しいトピックを作成します
     comments:

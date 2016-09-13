@@ -1,8 +1,10 @@
 %article.bbs-topic
   %h1.bbs-topic__title Topics
 
-  = link_to 'create new topic', bbs.new_category_topic_path(@category)
+  = link_to t('.new_topic'), bbs.new_category_topic_path(@category)
 
   %ol.bbs-topic-list
     - @topics.each do |topic|
-      %li.bbs-topic-item= link_to topic.title, bbs.topic_comments_path(topic)
+      %li.bbs-topic-item
+        %span= link_to topic.title, bbs.topic_comments_path(topic)
+        %span= t('.comment_count', count: topic.comments.count)
