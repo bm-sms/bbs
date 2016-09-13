@@ -1,9 +1,13 @@
 %article.bbs-article
   = cell('bbs/article', @topic)
 
+  %hr
+
   - @comments.each do |comment|
     %article.bbs-article
       = cell('bbs/article', comment)
+
+    %hr
 
   .bbs-pagination
     = paginate @comments
