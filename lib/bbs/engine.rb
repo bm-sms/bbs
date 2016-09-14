@@ -12,5 +12,7 @@ module Bbs
         require_dependency(c)
       end
     end
+
+    ActiveSupport.run_load_hooks :bbs_engine, Bbs::Engine
   end
 end
