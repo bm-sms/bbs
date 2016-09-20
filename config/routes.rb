@@ -1,5 +1,5 @@
 Bbs::Engine.routes.draw do
-  resources :profiles, only: %i(edit update)
+  resource :profile, only: %i(edit update)
 
   resources :categories do
     resources :topics, shallow: true do
