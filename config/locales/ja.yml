@@ -25,6 +25,9 @@ ja:
       bbs/comment:
         title: タイトル
         body: 本文
+      bbs/user_profile:
+        avatar_url: アバター
+        nickname: ニックネーム
   helpers:
     submit:
       topic:

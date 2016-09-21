@@ -1,0 +1,4 @@
+- if object.errors[attribute].any?
+  %ul.bbs-form-error-list
+    - object.errors.full_messages_for(attribute).each do |message|
+      %li.bbs-form-error-item= message
