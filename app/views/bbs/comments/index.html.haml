@@ -10,4 +10,7 @@
   .bbs-pagination
     = paginate @comments
 
+    - content_for :head do
+      = rel_next_prev_link_tags @comments
+
 = render partial: 'bbs/shared/comment_form', locals: {topic: @topic, comment: @comment}
