@@ -25,6 +25,9 @@ en:
       bbs/comment:
         title: Title
         body: Comment body
+      bbs/user_profile:
+        avatar_url: Avatar
+        nickname: Nickname
   helpers:
     submit:
       topic:

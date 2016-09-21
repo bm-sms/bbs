@@ -1,0 +1,10 @@
+= form_for current_user.profile, url: bbs.profile_path, html: {class: 'bbs-form bbs-form--vertical'} do |f|
+  .bbs-form-group
+    = f.label :avatar_url
+    = f.text_field :avatar_url
+
+  .bbs-form-group
+    = f.label :nickname
+    = f.text_field :nickname
+
+  = f.submit class: 'bbs-button'
