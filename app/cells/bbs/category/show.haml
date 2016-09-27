@@ -3,4 +3,5 @@
 
   %ol.bbs-category-list
     - @categories.each do |category|
-      %li.bbs-category-item= link_to category.name, bbs.category_topics_path(category)
+      %li.bbs-category-item{data: {category: "#{category.name}"}}
+        = link_to category.name, bbs.category_topics_path(category)
