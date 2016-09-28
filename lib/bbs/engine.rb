@@ -1,6 +1,7 @@
 require 'cells-rails'
 require 'cells-hamlit'
 require 'kaminari'
+require 'paperclip'
 require 'rails-i18n'
 
 module Bbs
