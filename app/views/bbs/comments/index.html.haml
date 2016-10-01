@@ -1,16 +1,14 @@
-%article.bbs-article
-  = cell('bbs/article', @topic)
+= cell('bbs/article', @topic)
 
-  %hr
+%hr
 
-  - @comments.each do |comment|
-    %article.bbs-article
-      = cell('bbs/article', comment)
+.bbs-comments
+  = render @comments
 
-  .bbs-pagination
-    = paginate @comments
+.bbs-pagination
+  = paginate @comments
 
-    - content_for :head do
-      = rel_next_prev_link_tags @comments
+  - content_for :head do
+    = rel_next_prev_link_tags @comments
 
 = render partial: 'bbs/shared/comment_form', locals: {topic: @topic, comment: @comment}

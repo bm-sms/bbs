@@ -1,6 +1,8 @@
 require 'cells-rails'
 require 'cells-hamlit'
+require 'jquery-rails'
 require 'kaminari'
+require 'rails-assets-infinite-scroll'
 require 'rails-i18n'
 
 module Bbs
