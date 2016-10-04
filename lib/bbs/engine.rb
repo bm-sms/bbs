@@ -1,5 +1,6 @@
 require 'cells-rails'
 require 'cells-hamlit'
+require 'gretel'
 require 'kaminari'
 require 'paperclip'
 require 'rails-i18n'
