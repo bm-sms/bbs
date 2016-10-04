@@ -51,3 +51,5 @@ ja:
       title: カテゴリ
     latest_topics:
       title: 最新トピック
+    breadcrumbs:
+      home: ホーム

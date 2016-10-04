@@ -48,3 +48,5 @@ en:
       title: Categories
     latest_topics:
       title: Latest topics
+    breadcrumbs:
+      home: Home
