@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'bourbon'
   s.add_dependency 'cells-hamlit'
   s.add_dependency 'cells-rails'
+  s.add_dependency 'gretel'
   s.add_dependency 'kaminari'
   s.add_dependency 'paperclip'
   s.add_dependency 'rails-i18n'
