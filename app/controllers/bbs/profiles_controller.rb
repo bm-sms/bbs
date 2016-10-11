@@ -1,6 +1,7 @@
 module Bbs
   class ProfilesController < ApplicationController
     def edit
+      current_user.build_profile unless current_user.profile
     end
 
     def update
