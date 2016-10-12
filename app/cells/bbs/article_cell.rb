@@ -10,11 +10,11 @@ module Bbs
     end
 
     def nickname
-      author.profile.nickname || t('.noname')
+      author.profile.nickname
     end
 
     def avatar_url
-      author.profile.avatar.avatar.url(:medium) || 'http://ruminate.branhamroys.com/wp-content/uploads/2015/07/unknown.gif'
+      author.profile.avatar.avatar.url(:medium)
     end
   end
 end
