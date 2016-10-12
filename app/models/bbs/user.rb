@@ -3,5 +3,8 @@ module Bbs
     has_one :profile, class_name: 'Bbs::UserProfile', dependent: :destroy
 
     accepts_nested_attributes_for :profile
+
+    validates_associated :profile
+    validates_presence_of :profile
   end
 end
