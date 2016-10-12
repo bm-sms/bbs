@@ -35,8 +35,6 @@ en:
       comment:
         create: Post new comment
   bbs:
-    article:
-      noname: no name
     topics:
       index:
         title: topics for %{category}
