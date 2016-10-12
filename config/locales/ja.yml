@@ -35,8 +35,6 @@ ja:
       comment:
         create: 投稿する
   bbs:
-    article:
-      noname: 名無しさん
     topics:
       index:
         title: '%{category}のトピック'
