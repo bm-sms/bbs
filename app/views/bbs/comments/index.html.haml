@@ -15,4 +15,7 @@
     - content_for :head do
       = rel_next_prev_link_tags @comments
 
-= render partial: 'bbs/shared/comment_form', locals: {topic: @topic, comment: @comment}
+- if logged_in?
+  = render partial: 'bbs/shared/comment_form', locals: {topic: @topic, comment: @comment}
+- else
+  = link_to t('.require_login'), Bbs.config.login_path, class: 'bbs-button'
