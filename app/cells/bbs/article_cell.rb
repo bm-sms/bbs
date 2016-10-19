@@ -9,6 +9,12 @@ module Bbs
       render
     end
 
+    def article_body
+      return body if logged_in? || !Bbs.config.clamp_article_body
+
+      body.truncate([body.truncate_words(1).length, Bbs.config.clamp_article_body].min)
+    end
+
     def nickname
       author.profile.nickname
     end
