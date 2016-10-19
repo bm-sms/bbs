@@ -1,5 +1,6 @@
 module Bbs
-  class TopicsController < ApplicationController
+  class TopicsController < Bbs::ApplicationController
+    before_action :authenticate_user!, only: %i(create)
     before_action :set_category
 
     def new
