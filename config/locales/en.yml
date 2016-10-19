@@ -40,8 +40,13 @@ en:
         title: topics for %{category}
         new_topic: create a new topic
         comment_count: (%{count} comments)
+        require_login: login required before create a new topic
       new:
         create: Create new topic
+    comments:
+      index:
+        posted_at: posted at
+        require_login: to view comments you must be logged
     category:
       title: Categories
     latest_topics:

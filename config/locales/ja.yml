@@ -40,11 +40,13 @@ ja:
         title: '%{category}のトピック'
         new_topic: 新しいトピックを立てる
         comment_count: (コメント %{count} 件)
+        require_login: トピックを立てるにはログインしてください
       new:
         create: 新しいトピックを作成します
     comments:
       index:
         posted_at: 投稿日時
+        require_login: コメントを閲覧するにはログインしてください
     category:
       title: カテゴリ
     latest_topics:
