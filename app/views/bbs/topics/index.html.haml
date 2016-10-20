@@ -2,7 +2,10 @@
   %h1.bbs-topic__title= t('.title', category: @category.name)
 
   .bbs-new-topic
-    = link_to t('.new_topic'), bbs.new_category_topic_path(@category), class: 'bbs-button'
+    - if logged_in?
+      = link_to t('.new_topic'), new_category_topic_path(@category), class: 'bbs-button'
+    - else
+      = link_to t('.require_login'), Bbs.config.login_path, class: 'bbs-button'
 
   %ol.bbs-topic-list
     - @topics.each do |topic|

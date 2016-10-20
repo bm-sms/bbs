@@ -8,8 +8,12 @@ module Bbs
     include Cell::Hamlit
     include Cell::Translation
 
-    delegate :bbs, :main_app, :current_user, to: :parent_controller
-
     self.view_paths = [Bbs::Engine.root.join('app/cells').to_s]
+
+    def method_missing(method, *args, &block)
+      super and return unless parent_controller.respond_to?(method)
+
+      parent_controller.__send__ method, *args, &block
+    end
   end
 end
