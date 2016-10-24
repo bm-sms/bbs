@@ -8,7 +8,6 @@ module Bbs
       source_root File.expand_path('../templates', __FILE__)
 
       def copy_initialier
-        binding.pry
         copy_file 'bbs.rb', 'config/initializers/bbs.rb'
       end
     end
