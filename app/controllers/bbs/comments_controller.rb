@@ -31,7 +31,7 @@ module Bbs
     end
 
     def comments
-      @topic.comments.order(:updated_at).page(params[:page]).per(10)
+      @topic.comments.order(:updated_at).page(params[:page]).per(Bbs.config.comments_per_page)
     end
   end
 end

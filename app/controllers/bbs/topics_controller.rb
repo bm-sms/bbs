@@ -18,7 +18,7 @@ module Bbs
     end
 
     def index
-      @topics = @category.topics.order(:created_at).page(params[:page]).per(10)
+      @topics = @category.topics.order(:created_at).page(params[:page]).per(Bbs.config.topics_per_page)
     end
 
     private
