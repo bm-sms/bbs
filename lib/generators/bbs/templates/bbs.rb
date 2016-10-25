@@ -11,4 +11,10 @@ Bbs.configure do |config|
 
   # set number of latest topics inside component
   #config.latest_topics_count = 10
+
+  # set number of topics per page
+  #config.topics_per_page = 10
+
+  # set number of topics per page
+  #config.comments_per_page = 10
 end
