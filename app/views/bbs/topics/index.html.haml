@@ -12,3 +12,9 @@
       %li.bbs-topic-item
         %span= link_to topic.title, bbs.topic_comments_path(topic)
         %span= t('.comment_count', count: topic.comments.count)
+
+  .bbs-pagination
+    = paginate @topics
+
+    - content_for :head do
+      = rel_next_prev_link_tags @topics
