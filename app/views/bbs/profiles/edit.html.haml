@@ -4,11 +4,9 @@
 
     = f.collection_radio_buttons :avatar_id, Bbs::Avatar.all, :id, :id do |r|
       = r.label { r.radio_button(style: 'width: 1em') + image_tag(r.object.avatar.url(:medium)) }
-    = render partial: 'bbs/shared/validation_errors', locals: {object: current_user.profile, attribute: :avatar_url}
 
   .bbs-form-group
     = f.label :nickname
     = f.text_field :nickname
-    = render partial: 'bbs/shared/validation_errors', locals: {object: current_user.profile, attribute: :nickname}
 
   = f.submit class: 'bbs-button'

@@ -2,11 +2,9 @@
   .bbs-form-group
     = f.label :title
     = f.text_field :title
-    = render partial: 'bbs/shared/validation_errors', locals: {object: @comment, attribute: :title}
 
   .bbs-form-group
     = f.label :body
     = f.text_area :body
-    = render partial: 'bbs/shared/validation_errors', locals: {object: @comment, attribute: :body}
 
   = f.submit class: 'bbs-button'
