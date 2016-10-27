@@ -7,10 +7,9 @@ module Bbs
       @comment = @topic.comments.build(comment_params)
 
       if @comment.save
-        redirect_to bbs.topic_comments_path(@topic), notice: t('.created')
+        redirect_to bbs.topic_comments_path(@topic), notice: t('.success')
       else
-        @comments = comments
-        render :index
+        redirect_back fallback_location: bbs.topic_comments_path(@topic), alert: @comment.errors.full_messages
       end
     end
 

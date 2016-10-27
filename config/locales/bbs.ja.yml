@@ -6,18 +6,10 @@ ja:
           attributes:
             author:
               required: 投稿者がありません。
-            title:
-              blank: タイトルを入力してください。
-            body:
-              blank: トピック本文を入力してください。
         bbs/comment:
           attributes:
             author:
               required: 投稿者がありません。
-            title:
-              blank: タイトルを入力してください。
-            body:
-              blank: コメント本文を入力してください。
     attributes:
       bbs/topic:
         title: タイトル
@@ -43,13 +35,22 @@ ja:
         require_login: トピックを立てるにはログインしてください
       new:
         create: 新しいトピックを作成します
+      create:
+        success: トピックを立てました
     comments:
       index:
         posted_at: 投稿日時
         require_login: コメントを閲覧するにはログインしてください
+      create:
+        success: コメントしました
     category:
       title: カテゴリ
     latest_topics:
       title: 最新トピック
     breadcrumbs:
       home: ホーム
+    profiles:
+      create:
+        success: プロフィールを作成しました
+      update:
+        success: プロフィールを更新しました
