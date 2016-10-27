@@ -8,16 +8,20 @@ module Bbs
 
     def create
       if current_user.create_profile(profile_params)
-        redirect_to action: :edit
+        redirect_to edit_profile_path, notice: t('.success')
       else
+        flash.now[:alert] = current_user.profile.errors.full_messages
+
         render :edit
       end
     end
 
     def update
       if current_user.profile.update(profile_params)
-        redirect_to action: :edit
+        redirect_to edit_profile_path, notice: t('.success')
       else
+        flash.now[:alert] = current_user.profile.errors.full_messages
+
         render :edit
       end
     end

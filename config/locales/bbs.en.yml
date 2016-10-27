@@ -6,18 +6,10 @@ en:
           attributes:
             author:
               required: Login required.
-            title:
-              blank: Enter the topic title.
-            body:
-              blank: Enter the topic.
         bbs/comment:
           attributes:
             author:
               required: Login required.
-            title:
-              blank: Enter the comment title.
-            body:
-              blank: Enter the comment.
     attributes:
       bbs/topic:
         title: Title
@@ -43,13 +35,22 @@ en:
         require_login: login required before create a new topic
       new:
         create: Create new topic
+      create:
+        success: new topic created
     comments:
       index:
         posted_at: posted at
         require_login: to view comments you must be logged
+      create:
+        success: commented
     category:
       title: Categories
     latest_topics:
       title: Latest topics
     breadcrumbs:
       home: Home
+    profiles:
+      create:
+        success: profile successfully created
+      update:
+        success: profile successfully updated

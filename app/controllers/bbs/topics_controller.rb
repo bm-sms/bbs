@@ -11,9 +11,9 @@ module Bbs
       @topic = @category.topics.build(topic_params)
 
       if @topic.save
-        redirect_to bbs.category_topics_path(@category)
+        redirect_to bbs.category_topics_path(@category), notice: t('.success')
       else
-        redirect_back fallback_location: main_app.root_path
+        redirect_back fallback_location: main_app.root_path, alert: @topic.errors.full_messages
       end
     end
 
