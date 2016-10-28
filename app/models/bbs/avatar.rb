@@ -2,8 +2,8 @@ module Bbs
   class Avatar < ApplicationRecord
     has_many :user_profiles, class_name: 'Bbs::UserProfile'
 
-    has_attached_file :avatar, styles: {medium: '48x48>', thumb: '48x48>'}
+    has_attached_file :image, styles: {medium: '48x48>', thumb: '48x48>'}
 
-    validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+    validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   end
 end
