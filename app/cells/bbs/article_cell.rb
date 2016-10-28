@@ -20,7 +20,7 @@ module Bbs
     end
 
     def avatar_url
-      author.profile.avatar.avatar.url(:medium)
+      author.profile.avatar.image.url(:medium)
     end
   end
 end
