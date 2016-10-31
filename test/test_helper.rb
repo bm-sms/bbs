@@ -10,6 +10,7 @@ require 'capybara'
 require 'rails/test_help'
 require 'minitest/rails'
 require 'minitest/rails/capybara'
+require 'simplecov'
 
 # Filter out Minitest backtrace while allowing backtrace from other libraries
 # to be shown.
@@ -33,3 +34,11 @@ Bbs::ApplicationController.class_eval do
     Bbs::User.first
   end
 end
+
+# save to CircleCI's artifacts directory if we're on CircleCI
+if ENV['CIRCLE_ARTIFACTS']
+  dir = File.join(ENV['CIRCLE_ARTIFACTS'], "coverage")
+  SimpleCov.coverage_dir(dir)
+end
+
+SimpleCov.start
