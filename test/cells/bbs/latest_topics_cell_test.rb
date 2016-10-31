@@ -1,8 +1,9 @@
 require 'test_helper'
 
-class LatestTopicsCellTest < Cell::TestCase
+class Bbs::LatestTopicsCellTest < Cell::TestCase
+  controller Bbs::ApplicationController
+
   test "show" do
-    html = cell("latest_topics").(:show)
-    assert html.match /<p>/
+    cell('bbs/latest_topics').(:show)
   end
 end

@@ -23,5 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'paperclip'
   s.add_dependency 'rails-i18n'
 
+  s.add_development_dependency 'minitest-rails-capybara'
   s.add_development_dependency 'pg'
+  s.add_development_dependency 'pry-byebug'
 end

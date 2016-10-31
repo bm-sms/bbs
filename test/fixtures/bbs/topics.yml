@@ -1,11 +1,11 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  title: MyString
-  body: MyText
+  title: topic1
+  body: topic1 body
   category: one
+  author: alice
 
 two:
-  title: MyString
-  body: MyText
+  title: topic2
+  body: topic2 body
   category: two
+  author: bob

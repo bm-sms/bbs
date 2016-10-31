@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_id: 1
-  avatar_url: MyString
-  nickname: MyString
+  user: alice
+  avatar: avatar1
+  nickname: nickname1
 
 two:
-  user_id: 1
-  avatar_url: MyString
-  nickname: MyString
+  user: bob
+  avatar: avatar2
+  nickname: nickname2
