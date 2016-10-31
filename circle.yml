@@ -1,0 +1,13 @@
+machine:
+  ruby:
+    version: 2.3.1
+
+dependencies:
+  cache_directories:
+    - vendor
+  override:
+    - bundle install --path vendor
+
+test:
+  override:
+    - bin/rails db:create db:migrate db:seed RAILS_ENV=test
