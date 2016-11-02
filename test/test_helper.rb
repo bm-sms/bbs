@@ -29,6 +29,10 @@ Cell::TestCase.class_eval do
   include Capybara::Assertions
 end
 
+ActionDispatch::IntegrationTest.class_eval do
+  include Capybara::DSL
+end
+
 Bbs::ApplicationController.class_eval do
   def current_user
     Bbs::User.first
