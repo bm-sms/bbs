@@ -1,11 +1,17 @@
-one:
+topic1:
   title: topic1
   body: topic1 body
   category: one
   author: alice
 
-two:
+topic2:
   title: topic2
   body: topic2 body
+  category: one
+  author: bob
+
+topic3:
+  title: topic3
+  body: topic3 body
   category: two
   author: bob

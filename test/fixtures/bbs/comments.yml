@@ -1,11 +1,17 @@
-one:
-  topic_id: 1
+comment1:
+  topic: topic1
   title: comment1
   body: comment1 body
   author: alice
 
-two:
-  topic_id: 1
+comment2:
+  topic: topic1
   title: comment2
   body: comment2 body
   author: bob
+
+comment3:
+  topic: topic2
+  title: comment3
+  body: comment3 body
+  author: alice
