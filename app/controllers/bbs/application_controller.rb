@@ -1,5 +1,7 @@
 module Bbs
   class ApplicationController < ::ApplicationController
+    include Bbs::Concerns::Authenticatable
+
     protect_from_forgery with: :exception
 
     layout 'layouts/application'
