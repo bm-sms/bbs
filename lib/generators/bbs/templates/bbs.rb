@@ -17,4 +17,10 @@ Bbs.configure do |config|
 
   # set number of topics per page
   #config.comments_per_page = 10
+
+  # set current_user method
+  config.current_user = :current_user
+
+  # set authenticate user method
+  config.authenticate_user = :authenticate_user!
 end
