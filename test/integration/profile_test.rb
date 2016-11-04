@@ -7,7 +7,7 @@ class ProfileTest < ActionDispatch::IntegrationTest
   fixtures 'bbs/users', 'bbs/user_profiles'
 
   test 'update user profile' do
-    Bbs::ApplicationController.current_user = Bbs::User.first
+    Bbs::ApplicationController.current_user = bbs_users(:alice)
 
     visit edit_profile_path
 
@@ -16,8 +16,8 @@ class ProfileTest < ActionDispatch::IntegrationTest
 
     click_button 'Update User profile'
 
-    assert_equal 'New Nickname', Bbs::User.first.profile.nickname
-    assert_equal Bbs::Avatar.find_by(image_file_name: 'avatar2.jpg'), Bbs::User.first.profile.avatar
+    assert_equal 'New Nickname', bbs_users(:alice).profile.nickname
+    assert_equal Bbs::Avatar.find_by(image_file_name: 'avatar2.jpg'), bbs_users(:alice).profile.avatar
   end
 
   test 'create new user profile' do

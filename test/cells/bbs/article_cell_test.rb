@@ -1,10 +1,7 @@
 require 'test_helper'
 
 class Bbs::ArticleCellTest < Cell::TestCase
-  fixtures 'bbs/users'
-  fixtures 'bbs/user_profiles'
-  fixtures 'bbs/topics'
-  fixtures 'bbs/comments'
+  fixtures :all
 
   controller Bbs::ApplicationController
 
