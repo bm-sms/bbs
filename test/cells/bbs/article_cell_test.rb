@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class Bbs::ArticleCellTest < Cell::TestCase
+  include LoginHelper
+
   fixtures :all
 
   controller Bbs::ApplicationController
@@ -26,7 +28,7 @@ class Bbs::ArticleCellTest < Cell::TestCase
   end
 
   test 'show a topic when user is logged in' do
-    Bbs::ApplicationController.current_user = Bbs::User.first
+    login_as :alice
 
     topic = Bbs::Topic.first
 
@@ -38,6 +40,6 @@ class Bbs::ArticleCellTest < Cell::TestCase
   end
 
   teardown do
-    Bbs::ApplicationController.current_user = nil
+    logout
   end
 end

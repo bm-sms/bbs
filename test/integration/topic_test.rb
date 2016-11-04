@@ -3,6 +3,7 @@ require 'test_helper'
 class TopicTest < ActionDispatch::IntegrationTest
   include Bbs::Engine.routes.url_helpers
   include ActionView::Helpers::TranslationHelper
+  include LoginHelper
 
   fixtures 'bbs/topics'
 
@@ -17,7 +18,7 @@ class TopicTest < ActionDispatch::IntegrationTest
   end
 
   test 'create a new topic' do
-    Bbs::ApplicationController.current_user = bbs_users(:alice)
+    login_as :alice
 
     visit category_topics_path(bbs_categories(:category1))
 
@@ -32,7 +33,7 @@ class TopicTest < ActionDispatch::IntegrationTest
   end
 
   teardown do
-    Bbs::ApplicationController.current_user = nil
+    logout
   end
 end
 

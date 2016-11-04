@@ -3,11 +3,12 @@ require 'test_helper'
 class ProfileTest < ActionDispatch::IntegrationTest
   include Bbs::Engine.routes.url_helpers
   include ActionView::Helpers::TranslationHelper
+  include LoginHelper
 
   fixtures 'bbs/users', 'bbs/user_profiles'
 
   test 'update user profile' do
-    Bbs::ApplicationController.current_user = bbs_users(:alice)
+    login_as :alice
 
     visit edit_profile_path
 
@@ -21,7 +22,7 @@ class ProfileTest < ActionDispatch::IntegrationTest
   end
 
   test 'create new user profile' do
-    Bbs::ApplicationController.current_user = bbs_users(:charlie)
+    login_as :charlie
 
     visit edit_profile_path
 
@@ -35,7 +36,7 @@ class ProfileTest < ActionDispatch::IntegrationTest
   end
 
   teardown do
-    Bbs::ApplicationController.current_user = nil
+    logout
   end
 end
 
