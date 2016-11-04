@@ -2,6 +2,7 @@ require 'test_helper'
 
 class CommentTest < ActionDispatch::IntegrationTest
   include Bbs::Engine.routes.url_helpers
+  include LoginHelper
 
   fixtures 'bbs/topics', 'bbs/comments'
 
@@ -16,7 +17,7 @@ class CommentTest < ActionDispatch::IntegrationTest
   end
 
   test 'create a new comment' do
-    Bbs::ApplicationController.current_user = bbs_users(:alice)
+    login_as :alice
 
     visit topic_comments_path(bbs_topics(:topic1))
 
@@ -29,7 +30,7 @@ class CommentTest < ActionDispatch::IntegrationTest
   end
 
   teardown do
-    Bbs::ApplicationController.current_user = nil
+    logout
   end
 end
 

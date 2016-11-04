@@ -1,5 +1,6 @@
 require 'pry'
 require 'rails/test_help'
+require 'helpers/login_helper'
 
 ENV['RAILS_ENV'] = 'test'
 
