@@ -4,6 +4,10 @@ class Bbs::LatestTopicsCellTest < Cell::TestCase
   controller Bbs::ApplicationController
 
   test 'show' do
-    cell('bbs/latest_topics').(:show)
+    target = cell('bbs/latest_topics').(:show)
+
+    Bbs::Topic.all.map(&:title).each do |title|
+      target.must_have_text title
+    end
   end
 end
