@@ -1,11 +1,17 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+topic1:
+  title: topic1
+  body: topic1 body
+  category: category1
+  author: alice
 
-one:
-  title: MyString
-  body: MyText
-  category: one
+topic2:
+  title: topic2
+  body: topic2 body
+  category: category1
+  author: bob
 
-two:
-  title: MyString
-  body: MyText
-  category: two
+topic3:
+  title: topic3
+  body: topic3 body
+  category: category2
+  author: bob

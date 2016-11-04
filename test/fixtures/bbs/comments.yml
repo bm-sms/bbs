@@ -1,11 +1,17 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+comment1:
+  topic: topic1
+  title: comment1
+  body: comment1 body
+  author: alice
 
-one:
-  topic_id: 1
-  title: MyString
-  body: MyText
+comment2:
+  topic: topic1
+  title: comment2
+  body: comment2 body
+  author: bob
 
-two:
-  topic_id: 1
-  title: MyString
-  body: MyText
+comment3:
+  topic: topic2
+  title: comment3
+  body: comment3 body
+  author: alice
