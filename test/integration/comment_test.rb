@@ -16,5 +16,23 @@ class CommentTest < ActionDispatch::IntegrationTest
       assert has_content?(comment.title)
     end
   end
+
+  test 'create a new comment' do
+    Bbs::ApplicationController.current_user = Bbs::User.first
+    topic = Bbs::Topic.find_by(title: 'topic1')
+
+    visit topic_comments_path(topic)
+
+    fill_in 'Title', with: 'New comment'
+    fill_in 'Comment body', with: 'New comment body'
+
+    click_button 'Post new comment'
+
+    assert Bbs::Comment.exists?(topic: topic, title: 'New comment', body: 'New comment body')
+  end
+
+  teardown do
+    Bbs::ApplicationController.current_user = nil
+  end
 end
 
