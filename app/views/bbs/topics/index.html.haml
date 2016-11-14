@@ -10,7 +10,7 @@
   %ol.bbs-topic-list
     - @topics.each do |topic|
       %li.bbs-topic-item
-        %span= link_to topic.title, bbs.topic_comments_path(topic)
+        %span= link_to sanitize(topic.title), bbs.topic_comments_path(topic)
         %span= t('.comment_count', count: topic.comments.count)
 
   .bbs-pagination

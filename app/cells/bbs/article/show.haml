@@ -1,14 +1,14 @@
 %article.bbs-article
   %header.bbs-article__header
-    %h1.bbs-article__title= title
+    %h1.bbs-article__title= sanitize(title)
 
   .bbs-article-container
     .bbs-article-creation
       %span.bbs-avatar
         %img(src="#{avatar_url}")
 
-      %span.bbs-article__author-name= nickname
+      %span.bbs-article__author-name= sanitize(nickname)
 
       %time.bbs-article__posted-at= l(created_at)
 
-    %p.bbs-article__body= article_body
+    %p.bbs-article__body= sanitize(article_body)
