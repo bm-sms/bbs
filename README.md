@@ -35,7 +35,6 @@ Rails.application.routes.draw do
 end
 ```
 
-## Generators
 ### Copy configurations to your application
 
 ```bash
@@ -49,6 +48,26 @@ Execute the above command will copy following files into your
 * config/locales/bbs.ja.yml
 * config/locales/bbs.en.yml
 
+## View Components
+### List categories
+
+Component that list all categories.
+In view, you have to call the cell object:
+
+```haml
+= cell('bbs/category')
+```
+
+### List latest topics
+
+Component that list latest topics.
+In view, you have to call the cell object:
+```haml
+= cell('bbs/latest_topics')
+```
+To change the number of displayed topics, change the value `config.latest_topics_count` in `config/initializers/bbs.rb` (The default is 10).
+
+## Customization
 ### Copy views to your application
 
 If you want to customize bbs views, you can copy view templates provided by this
