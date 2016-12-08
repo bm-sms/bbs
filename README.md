@@ -31,7 +31,7 @@ Edit `config/routes.rb`:
 
 ```ruby
 Rails.application.routes.draw do
-  mount Bbs::Engnie => '/bbs' # choose your mount point arbitrarylly
+  mount Bbs::Engine => '/bbs' # choose your mount point arbitrarily
 end
 ```
 
