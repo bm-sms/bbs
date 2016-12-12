@@ -1,6 +1,6 @@
 module Bbs
   class ProfilesController < Bbs::ApplicationController
-    before_action :authenticate_user!
+    before_action :authenticate_user
 
     def edit
       current_user.build_profile unless current_user.profile
