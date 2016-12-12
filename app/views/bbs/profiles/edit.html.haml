@@ -1,4 +1,4 @@
-= form_for current_user.profile, url: bbs.profile_path, html: {class: 'bbs-form bbs-form--vertical'} do |f|
+= form_for current_bbs_user.profile, url: bbs.profile_path, html: {class: 'bbs-form bbs-form--vertical'} do |f|
   .bbs-form-group
     = f.label :avatar_url
 

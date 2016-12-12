@@ -1,26 +1,26 @@
 module Bbs
   class ProfilesController < Bbs::ApplicationController
-    before_action :authenticate_user!
+    before_action :authenticate_bbs_user
 
     def edit
-      current_user.build_profile unless current_user.profile
+      current_bbs_user.build_profile unless current_bbs_user.profile
     end
 
     def create
-      if current_user.create_profile(profile_params)
+      if current_bbs_user.create_profile(profile_params)
         redirect_to edit_profile_path, notice: t('.success')
       else
-        flash.now[:alert] = current_user.profile.errors.full_messages
+        flash.now[:alert] = current_bbs_user.profile.errors.full_messages
 
         render :edit
       end
     end
 
     def update
-      if current_user.profile.update(profile_params)
+      if current_bbs_user.profile.update(profile_params)
         redirect_to edit_profile_path, notice: t('.success')
       else
-        flash.now[:alert] = current_user.profile.errors.full_messages
+        flash.now[:alert] = current_bbs_user.profile.errors.full_messages
 
         render :edit
       end

@@ -1,15 +1,15 @@
 Bbs::ApplicationController.class_eval do
-  class_attribute :current_user
+  class_attribute :current_bbs_user
 
-  def current_user; self.class.current_user end
+  def current_bbs_user; self.class.current_bbs_user end
 
   def authenticate_user_for_test
-    return if current_user
+    return if current_bbs_user
 
     redirect_to Bbs.config.login_path
   end
 
-  helper_method :current_user
+  helper_method :current_bbs_user
 end
 
 Bbs.configure do |config|
