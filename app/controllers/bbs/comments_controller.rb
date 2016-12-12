@@ -1,6 +1,6 @@
 module Bbs
   class CommentsController < Bbs::ApplicationController
-    before_action :authenticate_user, only: %i(create)
+    before_action :authenticate_bbs_user, only: %i(create)
     before_action :set_topic
 
     def create
@@ -26,7 +26,7 @@ module Bbs
 
     def comment_params
       params.require(:comment).permit(Bbs::Comment.permitted_attributes)
-        .merge(author: current_user)
+        .merge(author: current_bbs_user)
     end
 
     def comments

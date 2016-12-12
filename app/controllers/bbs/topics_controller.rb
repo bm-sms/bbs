@@ -1,6 +1,6 @@
 module Bbs
   class TopicsController < Bbs::ApplicationController
-    before_action :authenticate_user, only: %i(create)
+    before_action :authenticate_bbs_user, only: %i(create)
     before_action :set_category
 
     def new
@@ -29,7 +29,7 @@ module Bbs
 
     def topic_params
       params.require(:topic).permit(Bbs::Topic.permitted_attributes)
-        .merge(author: current_user)
+        .merge(author: current_bbs_user)
     end
   end
 end

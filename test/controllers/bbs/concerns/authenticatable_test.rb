@@ -9,11 +9,11 @@ module Bbs
       end
     end
 
-    test 'can call current_user' do
+    test 'can call current_bbs_user' do
       mock = MiniTest::Mock.new.expect(:actual_current_user, true)
       mock.class.include Bbs::Concerns::Authenticatable
 
-      mock.current_user
+      mock.current_bbs_user
 
       assert_mock mock
     end
@@ -22,14 +22,14 @@ module Bbs
       mock = MiniTest::Mock.new
       mock.class.include Bbs::Concerns::Authenticatable
 
-      assert_raises { mock.current_user }
+      assert_raises { mock.current_bbs_user }
     end
 
-    test 'can call authenticate_user' do
+    test 'can call authenticate_bbs_user' do
       mock = MiniTest::Mock.new.expect(:actual_authenticate_user, true)
       mock.class.include Bbs::Concerns::Authenticatable
 
-      mock.authenticate_user
+      mock.authenticate_bbs_user
 
       assert_mock mock
     end
@@ -38,7 +38,7 @@ module Bbs
       mock = MiniTest::Mock.new
       mock.class.include Bbs::Concerns::Authenticatable
 
-      assert_raises { mock.authenticate_user }
+      assert_raises { mock.authenticate_bbs_user }
     end
 
     teardown do
