@@ -2,7 +2,7 @@ class CreateProfile < ActiveRecord::Migration<%= "[#{Rails::VERSION::MAJOR}.#{Ra
   def change
     create_table :user_profiles do |t|
       t.integer :<%= user_model_name %>_id, null: false
-      t.string :avatar_url
+      t.integer :avatar_id, null: false
       t.string :nickname
 
       t.timestamps
