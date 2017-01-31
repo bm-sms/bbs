@@ -1,0 +1,56 @@
+en:
+  activerecord:
+    errors:
+      models:
+        bbs/topic:
+          attributes:
+            author:
+              required: Login required.
+        bbs/comment:
+          attributes:
+            author:
+              required: Login required.
+    attributes:
+      bbs/topic:
+        title: Title
+        body: Topic body
+      bbs/comment:
+        title: Title
+        body: Comment body
+      bbs/user_profile:
+        avatar_url: Avatar
+        nickname: Nickname
+  helpers:
+    submit:
+      topic:
+        create: Create new topic
+      comment:
+        create: Post new comment
+  bbs:
+    topics:
+      index:
+        title: topics for %{category}
+        new_topic: create a new topic
+        comment_count: (%{count} comments)
+        require_login: login required before create a new topic
+      new:
+        create: Create new topic
+      create:
+        success: new topic created
+    comments:
+      index:
+        posted_at: posted at
+        require_login: to view comments you must be logged
+      create:
+        success: commented
+    category:
+      title: Categories
+    latest_topics:
+      title: Latest topics
+    breadcrumbs:
+      home: Home
+    profiles:
+      create:
+        success: profile successfully created
+      update:
+        success: profile successfully updated

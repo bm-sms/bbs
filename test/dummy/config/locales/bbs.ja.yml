@@ -1,0 +1,56 @@
+ja:
+  activerecord:
+    errors:
+      models:
+        bbs/topic:
+          attributes:
+            author:
+              required: 投稿者がありません。
+        bbs/comment:
+          attributes:
+            author:
+              required: 投稿者がありません。
+    attributes:
+      bbs/topic:
+        title: タイトル
+        body: 本文
+      bbs/comment:
+        title: タイトル
+        body: 本文
+      bbs/user_profile:
+        avatar_url: アバター
+        nickname: ニックネーム
+  helpers:
+    submit:
+      topic:
+        create: トピックを作成する
+      comment:
+        create: 投稿する
+  bbs:
+    topics:
+      index:
+        title: '%{category}のトピック'
+        new_topic: 新しいトピックを立てる
+        comment_count: (コメント %{count} 件)
+        require_login: トピックを立てるにはログインしてください
+      new:
+        create: 新しいトピックを作成します
+      create:
+        success: トピックを立てました
+    comments:
+      index:
+        posted_at: 投稿日時
+        require_login: コメントを閲覧するにはログインしてください
+      create:
+        success: コメントしました
+    category:
+      title: カテゴリ
+    latest_topics:
+      title: 最新トピック
+    breadcrumbs:
+      home: ホーム
+    profiles:
+      create:
+        success: プロフィールを作成しました
+      update:
+        success: プロフィールを更新しました
