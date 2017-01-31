@@ -6,7 +6,7 @@ Bbs.configure do |config|
   # If you set value `false`, never clamp line.
   #config.clamp_article_body = 10
 
-  # spedify sign in path
+  # specify sign in path
   #config.login_path = '/users/sign_in'
 
   # set number of latest topics inside component
