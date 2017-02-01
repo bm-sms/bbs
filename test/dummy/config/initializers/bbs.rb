@@ -21,12 +21,6 @@ Bbs.configure do |config|
   # required: set user class name
   config.user_class = 'User'
 
-  # required: set user profile class name
-  config.user_profile_class = 'UserProfile'
-
-  # required: set avatar class name
-  config.avatar_class = 'Avatar'
-
   # set current_user method
   config.current_user = :current_user
 

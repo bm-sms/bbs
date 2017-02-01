@@ -27,12 +27,6 @@ module Bbs
     def user_class; @user_class.constantize end
     def user_class_name; @user_class end
 
-    def user_profile_class; @user_profile_class.constantize end
-    def user_profile_class_name; @user_profile_class end
-
-    def avatar_class; @avatar_class.constantize end
-    def avatar_class_name; @avatar_class end
-
     def current_user
       @current_user ||= :current_user
     end

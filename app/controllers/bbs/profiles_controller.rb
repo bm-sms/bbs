@@ -29,7 +29,7 @@ module Bbs
     private
 
     def profile_params
-      params.require(:user_profile).permit(Bbs.config.user_profile_class.attribute_names.without(%w(id created_at updated_at)))
+      params.require(:user_profile).permit(UserProfile.attribute_names.without(%w(id created_at updated_at)))
     end
   end
 end
