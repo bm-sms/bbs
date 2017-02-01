@@ -48,6 +48,20 @@ Execute the above command will copy following files into your
 * config/locales/bbs.ja.yml
 * config/locales/bbs.en.yml
 
+### Generate User/UserProfile/Avatar models
+
+```bash
+$ rails g active_record:bbs User
+```
+
+Execute the above command will generate models(User, UserProfile and Avatar) and its migrations.
+
+Uncomment bbs config and specify user model name arbitrary.
+
+```ruby
+config.user_class = 'User'
+```
+
 ## View Components
 ### List categories
 
