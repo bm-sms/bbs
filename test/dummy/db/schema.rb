@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161028081055) do
+ActiveRecord::Schema.define(version: 20170131080944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "avatars", force: :cascade do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
 
   create_table "bbs_avatars", force: :cascade do |t|
     t.string   "image_file_name"
@@ -61,7 +70,21 @@ ActiveRecord::Schema.define(version: 20161028081055) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_profiles", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "avatar_id",  null: false
+    t.string   "nickname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "bbs_comments", "bbs_topics", column: "topic_id"
   add_foreign_key "bbs_topics", "bbs_categories", column: "category_id"
   add_foreign_key "bbs_user_profiles", "bbs_users", column: "user_id"
+  add_foreign_key "user_profiles", "users"
 end

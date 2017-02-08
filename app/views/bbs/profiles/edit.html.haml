@@ -2,7 +2,7 @@
   .bbs-form-group
     = f.label :avatar_url
 
-    = f.collection_radio_buttons :avatar_id, Bbs::Avatar.all, :id, :id do |r|
+    = f.collection_radio_buttons :avatar_id, Avatar.all, :id, :id do |r|
       = r.label { r.radio_button(style: 'width: 1em') + image_tag(r.object.image.url(:medium)) }
 
   .bbs-form-group

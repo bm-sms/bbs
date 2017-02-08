@@ -19,7 +19,7 @@ Bbs.configure do |config|
   #config.comments_per_page = 10
 
   # required: set user class name
-  #config.user_class = 'User'
+  config.user_class = 'User'
 
   # set current_user method
   config.current_user = :current_user
